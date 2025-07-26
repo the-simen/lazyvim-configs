@@ -3,6 +3,11 @@ return {
   optional = true,
   depenencies = { "saghen/blink.compat" },
   opts = {
+    completion = {
+      menu = { border = "rounded" },
+      documentation = { window = { border = "rounded" } },
+    },
+    signature = { window = { border = "rounded" } },
     sources = {
       compat = { "supermaven" },
       providers = {
