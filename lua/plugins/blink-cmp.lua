@@ -4,13 +4,13 @@ return {
   depenencies = { "saghen/blink.compat" },
   opts = {
     sources = {
-      compat = { "supermaven", "copilot" },
+      compat = { "supermaven" },
       providers = {
-        copilot = {
-          kind = "Copilot",
-          score_offset = 100,
-          async = true,
-        },
+        -- copilot = {
+        --   kind = "Copilot",
+        --   score_offset = 100,
+        --   async = true,
+        -- },
         supermaven = {
           kind = "Supermaven",
           score_offset = 100,
