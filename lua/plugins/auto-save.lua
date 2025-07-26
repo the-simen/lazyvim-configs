@@ -1,0 +1,23 @@
+return {
+  -- "Pocco81/auto-save.nvim",
+  -- config = function()
+  --   require("auto-save").setup({
+  --     enabled = false, -- auto-save включается вручную (например, командой)
+  --     debounce_delay = 1000, -- задержка между изменением и сохранением
+  --     trigger_events = {}, -- сохранять только при изменении текста
+  --     execution_message = {
+  --       message = function()
+  --         return "AutoSave: saved at " .. os.date("%H:%M:%S")
+  --       end,
+  --       dim = 0.5,
+  --       cleaning_interval = 50, -- правильно: `cleaning_interval`, а не `cleaning`
+  --     },
+  --     condition = function(buf)
+  --       -- Не сохранять для этих типов буферов
+  --       local fn = vim.fn
+  --       local utils = require("auto-save.utils.data")
+  --       return fn.getbufvar(buf, "&modifiable") == 1 and utils.not_in(fn.getbufvar(buf, "&filetype"), {}) -- добавь исключения, если нужно
+  --     end,
+  --   })
+  -- end,
+}
