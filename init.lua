@@ -2,6 +2,11 @@
 
 require("lazy-config")
 
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+  },
+})
 vim.g.gitsings_async = false
 vim.g.lazyvim_format_on_save = false
 vim.g.spell = false
