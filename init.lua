@@ -7,6 +7,12 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "rounded", -- или "single", "double", "solid", "shadow", "none"
+})
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded", -- варианты: "single", "double", "shadow", "none"
+})
 vim.g.gitsings_async = false
 vim.g.lazyvim_format_on_save = false
 vim.g.spell = false
