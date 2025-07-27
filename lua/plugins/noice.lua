@@ -6,9 +6,14 @@ return {
       ["vim.lsp.util.stylize_markdown"] = true,
       ["cmp.entry.get_documentation"] = true,
     },
+    notify = {
+      enabled = false,
+    },
     lsp = {
       enabled = true,
       hover = {
+        enabled = true,
+        silent = true,
         opts = {
           border = "rounded",
           position = {
