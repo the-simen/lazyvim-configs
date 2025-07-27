@@ -44,7 +44,14 @@ local function remap_keys()
   vim.keymap.set("n", "N", vim.lsp.buf.definition, { desc = "Go to Definition" })
 
   -- Подсказки и исправления
-  vim.keymap.set("n", "<leader>m", vim.lsp.buf.hover, { desc = "Show Documentation" })
+  vim.keymap.set(
+    "n",
+    "<leader>m",
+    vim.lsp.with(vim.lsp.buf.hover, {
+      border = "rounded",
+    }),
+    { desc = "Show Documentation with Border" }
+  )
   vim.keymap.set("n", "<leader>n", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
   -- Переназначение b -> n
