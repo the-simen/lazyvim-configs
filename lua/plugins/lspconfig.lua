@@ -33,6 +33,7 @@ return {
             hint = { enable = false },
             telemetry = { enable = false },
             diagnostics = {
+              enable = false,
               globals = { "vim" },
             },
           },

@@ -2,42 +2,58 @@ return {
   "saghen/blink.cmp",
   optional = true,
   depenencies = { "saghen/blink.compat" },
-  opts = {
-    completion = {
+  opts = function(_, opts)
+    local MiniSnippets = require("mini.snippets")
+    -- ⬇️ Твои текущие настройки как основа
+    opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
       menu = { border = "rounded" },
       documentation = { window = { border = "rounded" } },
-    },
-    signature = { window = { border = "rounded" } },
-    sources = {
+    })
+
+    opts.signature = vim.tbl_deep_extend("force", opts.signature or {}, {
+      window = { border = "rounded" },
+    })
+
+    opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
       compat = { "supermaven" },
       providers = {
-        -- copilot = {
-        --   kind = "Copilot",
-        --   score_offset = 100,
-        --   async = true,
-        -- },
         supermaven = {
           kind = "Supermaven",
           score_offset = 100,
           async = true,
         },
       },
-    },
-    keymap = {
+    })
+
+    opts.keymap = vim.tbl_deep_extend("force", opts.keymap or {}, {
       preset = "default",
       ["<Tab>"] = { "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
-
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
       ["<C-l>"] = { "select_prev", "fallback" },
       ["<C-k>"] = { "select_next", "fallback" },
-
       ["<S-k>"] = { "scroll_documentation_up", "fallback" },
       ["<S-j>"] = { "scroll_documentation_down", "fallback" },
-
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
-    },
-  },
+    })
+
+    if include_in_completion then
+      opts.snippets = { preset = "mini_snippets" }
+      return opts
+    end
+
+    -- Standalone --
+    local expand_select_override
+    expand_select_override = function(snippets, insert)
+      -- Schedule, otherwise blink's virtual text is not removed on vim.ui.select
+      blink.cancel()
+      vim.schedule(function()
+        MiniSnippets.default_select(snippets, insert)
+      end)
+    end
+
+    return opts
+  end,
 }
