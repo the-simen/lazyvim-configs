@@ -67,6 +67,7 @@ local function remap_keys()
   vim.keymap.set("n", "<leader>rn", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
   end, { expr = true })
+  vim.keymap.set("c", "<C-j>", "<BS>", { noremap = true })
 end
 
 remap_keys()
