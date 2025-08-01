@@ -64,6 +64,9 @@ local function remap_keys()
   vim.keymap.set("n", "B", "N", { noremap = true, silent = true, desc = "Previous search result" })
 
   vim.keymap.set("i", "<C-;>", "<Del>", { silent = true, desc = "Delete char after cursor" })
+  vim.keymap.set("n", "<leader>rn", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+  end, { expr = true })
 end
 
 remap_keys()
