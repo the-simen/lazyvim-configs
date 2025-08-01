@@ -43,20 +43,8 @@ local function remap_keys()
   -- Декларация через LSP
   vim.keymap.set("n", "N", vim.lsp.buf.definition, { desc = "Go to Definition" })
 
-  vim.keymap.set("n", "K", function()
-    vim.lsp.buf.hover({
-      border = "single",
-    })
-  end)
   -- Подсказки и исправления
-  -- vim.keymap.set(
-  --   "n",
-  --   "<leader>m",
-  --   vim.lsp.with(vim.lsp.buf.hover, {
-  --     border = "rounded",
-  --   }),
-  --   { desc = "Show Documentation with Border" }
-  -- )
+  vim.keymap.set("n", "h", vim.lsp.buf.hover, { desc = "Hover hint" })
   vim.keymap.set("n", "<leader>n", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
   -- Переназначение b -> n
@@ -69,6 +57,11 @@ local function remap_keys()
   -- Перемещение строк вверх (Alt+l)
   vim.keymap.set("n", "<A-l>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
   vim.keymap.set("v", "<A-l>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+
+  -- b → next search result (вместо n)
+  vim.keymap.set("n", "b", "n", { noremap = true, silent = true, desc = "Next search result" })
+  -- B → prev search result (вместо N)
+  vim.keymap.set("n", "B", "N", { noremap = true, silent = true, desc = "Previous search result" })
 
   vim.keymap.set("i", "<C-;>", "<Del>", { silent = true, desc = "Delete char after cursor" })
 end
