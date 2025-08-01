@@ -1,11 +1,13 @@
 return {
   "folke/noice.nvim",
   opts = {
+    presets = {
+      lsp_doc_border = true,
+    },
     norify = {
       enabled = false,
     },
     lsp = {
-      enabled = true,
       hover = {
         enabled = false,
       },

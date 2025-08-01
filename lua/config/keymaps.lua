@@ -43,6 +43,11 @@ local function remap_keys()
   -- Декларация через LSP
   vim.keymap.set("n", "N", vim.lsp.buf.definition, { desc = "Go to Definition" })
 
+  vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+      border = "single",
+    })
+  end)
   -- Подсказки и исправления
   -- vim.keymap.set(
   --   "n",
