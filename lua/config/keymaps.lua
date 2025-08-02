@@ -18,6 +18,9 @@ local function remap_keys()
   -- Перемещение между буферами
   vim.keymap.set("n", "<A-j>", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
   vim.keymap.set("n", "<A-;>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+	vim.keymap.set("n", "H", "<nop>")
+	vim.keymap.set("n", "L", "<nop>")
+
 
   -- Переключение между окнами (адаптация под jkl;)
   vim.keymap.set("n", "<leader>j", "<C-w>h", { desc = "Focus left window" }) -- ←
@@ -26,7 +29,7 @@ local function remap_keys()
   vim.keymap.set("n", "<leader>;", "<C-w>l", { desc = "Focus right window" }) -- →
 
   -- Закрытие буфера
-  vim.keymap.set("n", "<leader>q", "<cmd>BufDel<cr>", { desc = "Close Buffer" })
+  vim.keymap.set("n", "qq", "<cmd>BufDel<cr>", { desc = "Close Buffer" })
 
   -- Переключение Neo-tree
   vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NeoTree" })

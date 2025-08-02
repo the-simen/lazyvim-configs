@@ -13,7 +13,7 @@ return {
       css = true, -- enable all CSS features
       css_fn = true, -- enable functions like `rgb()`, `hsl()`
       tailwind = true, -- tailwind classes
-      mode = "background", -- also try "virtualtext" or "foreground"
+      mode = "foreground", -- also try "virtualtext" or "foreground"
     },
   },
 }

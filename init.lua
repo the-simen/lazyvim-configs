@@ -7,9 +7,9 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
-vim.g.gitsings_async = false
+vim.g.gitsings_async = true
 vim.g.lazyvim_format_on_save = false
-vim.g.spell = false
+vim.g.spell = true
 vim.env.PATH = vim.env.PATH .. ";C:/Users/tonki/AppData/Roaming/npm"
 -- Добавьте в init.lua
 vim.o.shadafile = vim.fn.stdpath("state") .. "/shada/main.shada"
