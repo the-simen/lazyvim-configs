@@ -16,16 +16,14 @@ local function remap_keys()
   vim.keymap.set({ "n", "x" }, ";", "l", { desc = "Right" })
 
   -- Перемещение между буферами
-  vim.keymap.set("n", "J", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+  vim.keymap.set("n", "<A-j>", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+  vim.keymap.set("n", "<A-;>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
   -- Переключение между окнами (адаптация под jkl;)
   vim.keymap.set("n", "<leader>j", "<C-w>h", { desc = "Focus left window" }) -- ←
   vim.keymap.set("n", "<leader>k", "<C-w>j", { desc = "Focus down window" }) -- ↓
   vim.keymap.set("n", "<leader>l", "<C-w>k", { desc = "Focus up window" }) -- ↑
   vim.keymap.set("n", "<leader>;", "<C-w>l", { desc = "Focus right window" }) -- →
-
-  -- Циклическое переключение между окнами
-  vim.keymap.set("n", "<leader>w", "<C-w>w", { desc = "Cycle windows" })
 
   -- Закрытие буфера
   vim.keymap.set("n", "<leader>q", "<cmd>BufDel<cr>", { desc = "Close Buffer" })
@@ -34,7 +32,8 @@ local function remap_keys()
   vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NeoTree" })
 
   -- Сплиты
-  vim.keymap.set("n", "<leader>w", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
+  vim.keymap.set("n", "<leader>wv", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
+  vim.keymap.set("n", "<leader>wh", "<cmd>split<cr>", { desc = "Horizontal Split" })
 
   -- Отключить копирование при удалении
   vim.keymap.set({ "n", "x" }, "d", '"_d', { desc = "Delete without yank" })
@@ -68,6 +67,11 @@ local function remap_keys()
     return ":IncRename " .. vim.fn.expand("<cword>")
   end, { expr = true })
   vim.keymap.set("c", "<C-j>", "<BS>", { noremap = true })
+
+  -- lazygit
+  vim.keymap.set("n", "<leader>gg", function()
+    Snacks.lazygit()
+  end, { desc = "Lazygit (cwd)" })
 end
 
 remap_keys()
