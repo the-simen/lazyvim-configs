@@ -29,10 +29,10 @@ Advice from savvy people is welcome.
 4. `<leader>e` toggle Neo-tree
 5. `<leader>rn` to IncRename as floating window
 6. `<leader>sa` to mini.surround (visual only)
-7. `S` for flash plugin
+7. `ss` for flash plugin
 8. `<A-k>`, `<A-l>` move selected text up and down accordingly (visual)
 
-## Useful commands
+## Useful commands, just for reference
 
 ### Default movement
 
