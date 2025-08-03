@@ -16,10 +16,9 @@ Advice from savvy people is welcome.
 3. `b` and `B` as navigate to next/previous in search mode instead of `n` and `N`
 4. `<leader>j`, `<leader>k`, `<leader>l`, `<leader>;` to move between splits
 5. `<A-j>` and `<A-;>` to move to left and right buffers accordingly
-6. `<leader>w` as split to right
-7. `N` as go to definition, I don't know default binding for it
-8. `<C-k>`, `<C-l>` to browse in blink.cmp floating window and `<C-y>` (which is default, but another keys are disabled) to select completion
-9. `<A-j>`, `<A-;>` for moving between snippet control points
+6. `N` as go to definition, I don't know default binding for it
+7. `<C-k>`, `<C-l>` to browse in blink.cmp floating window and `<C-y>` (which is default, but another keys are disabled) to select completion
+8. `<A-j>`, `<A-;>` for moving between snippet control points
 
 ### Code actions and editing including plugins
 
@@ -31,6 +30,7 @@ Advice from savvy people is welcome.
 6. `<leader>sa` to mini.surround (visual only)
 7. `ss` for flash plugin
 8. `<A-k>`, `<A-l>` move selected text up and down accordingly (visual)
+9. `qq` close current buffer
 
 ## Useful commands, just for reference
 
