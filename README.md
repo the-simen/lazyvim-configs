@@ -72,6 +72,18 @@ Advice from savvy people is welcome.
 13. `<leader>wh` horizontal split
 14. `<leader>wd` delete window
 15. `<leader>gg` lazygit (cwd)
+16. `<leader>qq` exit vim
+17. `<leader>qs` load last session (doesn't work inside neo-tree)
+
+### Neo-tree
+
+1. `a` add new file (type "/" after name to create folder)
+2. `A` add new folder
+3. `j` - fold under cursor,
+   `;` - unfold under cursor or open file
+   `k`, `l` - move up and down
+4. `s` - open file in vertical split
+5. `S` - open file in horizontal split
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
