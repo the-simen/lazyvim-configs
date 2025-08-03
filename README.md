@@ -34,6 +34,18 @@ Advice from savvy people is welcome.
 
 ## Useful commands, just for reference
 
+### commands
+
+1. `d` delete
+2. `c` delete and go into insert mode
+3. `y` copy
+4. `p`, `P` paste
+
+### modifiers
+
+1. `i` inside
+2. `a` around
+
 ### Default movement
 
 1. `w` move to start of next word
@@ -47,11 +59,6 @@ Advice from savvy people is welcome.
 
 ### Default editing
 
-1. `r[symbol]` swap character under cursor
-2. `x` clip selected text
-3. `d` delete selected text (copy after deleting removed)
-4. `y` copy selected text
-5. `p`, `P` paste after and before cursor accordingly
 6. `i`, `a` insert mode
 7. `o`, `O` insert line below and above accordingly
 
@@ -74,6 +81,13 @@ Advice from savvy people is welcome.
 15. `<leader>gg` lazygit (cwd)
 16. `<leader>qq` exit vim
 17. `<leader>qs` load last session (doesn't work inside neo-tree)
+18. `yiw` copy word under cursor
+19. `viw` select word under cursor
+20. `ci[brackets]` delete inside brackets or
+21. `da[brackets]` delete around (including brackets)
+22. `dip` delete paragraph
+23. `diw` delete word under cursor
+24. `ciw` delete word under cursor and go into insert mode
 
 ### Neo-tree
 
