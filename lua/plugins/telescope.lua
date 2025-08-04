@@ -11,9 +11,17 @@ return {
         mappings = {
           i = {
             ["<esc>"] = actions.close,
+            ["<C-j>"] = function(prompt_bufnr)
+              local cursor_pos = vim.api.nvim_win_get_cursor(0)
+              local col = cursor_pos[2]
+              if col > 0 then
+                local current_line = vim.api.nvim_get_current_line()
+                local new_line = current_line:sub(1, col - 1) .. current_line:sub(col + 1)
+                vim.api.nvim_set_current_line(new_line)
+                vim.api.nvim_win_set_cursor(0, { cursor_pos[1], col - 1 })
+              end
+            end,
             -- Сохраняем ваши оригинальные маппинги для insert mode
-            ["k"] = actions.move_selection_next,
-            ["l"] = actions.move_selection_previous,
           },
           n = {
             -- Ваши кастомные маппинги для normal mode
@@ -33,16 +41,6 @@ return {
           hidden = true,
         },
       },
-    })
-
-    -- Автоматический выход из insert mode после открытия
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "TelescopePreviewerLoaded",
-      callback = function()
-        if vim.fn.mode() == "i" then
-          vim.cmd("stopinsert")
-        end
-      end,
     })
 
     -- Глобальные keymaps
