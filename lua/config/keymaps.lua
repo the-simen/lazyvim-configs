@@ -20,6 +20,8 @@ local function remap_keys()
   vim.keymap.set("n", "<A-;>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
   vim.keymap.set("n", "H", "<nop>")
   vim.keymap.set("n", "L", "<nop>")
+  vim.keymap.set("i", "K", "K", { noremap = true })
+  vim.keymap.set("i", "<C-s>", "<nop>")
 
   -- Переключение между окнами (адаптация под jkl;)
   vim.keymap.set("n", "<leader>j", "<C-w>h", { desc = "Focus left window" }) -- ←
