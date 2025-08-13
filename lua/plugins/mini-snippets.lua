@@ -15,7 +15,7 @@ return {
 
     return {
       mappings = {
-        expand = "<A-s>",
+        expand = "<ss>",
         jump_next = "<A-;>",
         jump_prev = "<A-j>",
       },
