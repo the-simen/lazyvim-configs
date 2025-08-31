@@ -54,10 +54,10 @@ return {
         close_if_last_window = true,
         window = {
           mappings = {
-            ["j"] = "close_node",
-            [";"] = "open",
-            ["k"] = "",
-            ["l"] = "",
+            ["h"] = "close_node",
+            ["l"] = "open",
+            -- ["k"] = "",
+            -- ["l"] = "",
           },
         },
       }

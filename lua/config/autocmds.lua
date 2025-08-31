@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "LazyVimStarted",
   callback = function()
     -- например, Ctrl+j в insert-mode удаление символа слева
-    vim.keymap.set("i", "<C-j>", "<BS>", { silent = true, desc = "Backspace" })
+    -- vim.keymap.set("i", "<C-j>", "<BS>", { silent = true, desc = "Backspace" })
     -- другая твоя кастомная мапа, например jj -> <Esc>
     vim.keymap.set("i", "jj", "<Esc>", { silent = true, desc = "Exit Insert" })
   end,

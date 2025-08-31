@@ -31,8 +31,8 @@ return {
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
-      ["<C-l>"] = { "select_prev", "fallback" },
-      ["<C-k>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next", "fallback" },
     })
 
     if include_in_completion then

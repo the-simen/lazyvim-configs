@@ -1,5 +1,7 @@
 # 💤 LazyVim
 
+(README DEPRECATED)
+
 This is my personal configuration, there you can see my key bindings and the rest of default.
 
 My knowledge of .lua is about zero, so the config is probably not ideal. But it works for me.
