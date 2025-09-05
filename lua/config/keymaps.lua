@@ -22,6 +22,7 @@ local function remap_keys()
   -- vim.keymap.set("n", "L", "<nop>")
   vim.keymap.set("i", "K", "K", { noremap = true })
   vim.keymap.set("i", "<C-s>", "<nop>")
+  vim.keymap.set("n", "<C-s>", "<nop>")
 
   -- Переключение между окнами (адаптация под jkl;)
   -- vim.keymap.set("n", "<leader>j", "<C-w>h", { desc = "Focus left window" }) -- ←
@@ -33,7 +34,7 @@ local function remap_keys()
   vim.keymap.set("n", "qq", "<cmd>BufDel<cr>", { desc = "Close Buffer" })
 
   -- Переключение Neo-tree
-  vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NeoTree" })
+  -- vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NeoTree" })
 
   -- Сплиты
   vim.keymap.set("n", "<leader>wv", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
